@@ -14,6 +14,9 @@
 		026E55D01F1DB48700EF6B97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 026E55CE1F1DB48700EF6B97 /* LaunchScreen.storyboard */; };
 		026E55DB1F1DB48700EF6B97 /* AsyncImageViewSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E55DA1F1DB48700EF6B97 /* AsyncImageViewSampleTests.swift */; };
 		026E55E61F1DB48700EF6B97 /* AsyncImageViewSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E55E51F1DB48700EF6B97 /* AsyncImageViewSampleUITests.swift */; };
+		026E55F51F1DB4C700EF6B97 /* UIImageView+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E55F41F1DB4C700EF6B97 /* UIImageView+Async.swift */; };
+		026E55F71F1DB86300EF6B97 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E55F61F1DB86300EF6B97 /* String+Helpers.swift */; };
+		026E56001F1DB9E300EF6B97 /* Data+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E55FF1F1DB9E300EF6B97 /* Data+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,10 @@
 		026E55E11F1DB48700EF6B97 /* AsyncImageViewSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncImageViewSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		026E55E51F1DB48700EF6B97 /* AsyncImageViewSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageViewSampleUITests.swift; sourceTree = "<group>"; };
 		026E55E71F1DB48700EF6B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		026E55F41F1DB4C700EF6B97 /* UIImageView+Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Async.swift"; sourceTree = "<group>"; };
+		026E55F61F1DB86300EF6B97 /* String+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
+		026E55FB1F1DB98F00EF6B97 /* AsyncImageViewSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsyncImageViewSample-Bridging-Header.h"; sourceTree = "<group>"; };
+		026E55FF1F1DB9E300EF6B97 /* Data+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +88,7 @@
 				026E55D91F1DB48700EF6B97 /* AsyncImageViewSampleTests */,
 				026E55E41F1DB48700EF6B97 /* AsyncImageViewSampleUITests */,
 				026E55C31F1DB48700EF6B97 /* Products */,
+				026E55FB1F1DB98F00EF6B97 /* AsyncImageViewSample-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +105,9 @@
 		026E55C41F1DB48700EF6B97 /* AsyncImageViewSample */ = {
 			isa = PBXGroup;
 			children = (
+				026E55F61F1DB86300EF6B97 /* String+Helpers.swift */,
+				026E55FF1F1DB9E300EF6B97 /* Data+Helpers.swift */,
+				026E55F31F1DB49900EF6B97 /* AsyncImageView */,
 				026E55C51F1DB48700EF6B97 /* AppDelegate.swift */,
 				026E55C71F1DB48700EF6B97 /* ViewController.swift */,
 				026E55C91F1DB48700EF6B97 /* Main.storyboard */,
@@ -123,6 +134,14 @@
 				026E55E71F1DB48700EF6B97 /* Info.plist */,
 			);
 			path = AsyncImageViewSampleUITests;
+			sourceTree = "<group>";
+		};
+		026E55F31F1DB49900EF6B97 /* AsyncImageView */ = {
+			isa = PBXGroup;
+			children = (
+				026E55F41F1DB4C700EF6B97 /* UIImageView+Async.swift */,
+			);
+			name = AsyncImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +213,7 @@
 					026E55C11F1DB48700EF6B97 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 4PVHH82237;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					026E55D51F1DB48700EF6B97 = {
@@ -262,8 +282,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				026E56001F1DB9E300EF6B97 /* Data+Helpers.swift in Sources */,
+				026E55F71F1DB86300EF6B97 /* String+Helpers.swift in Sources */,
 				026E55C81F1DB48700EF6B97 /* ViewController.swift in Sources */,
 				026E55C61F1DB48700EF6B97 /* AppDelegate.swift in Sources */,
+				026E55F51F1DB4C700EF6B97 /* UIImageView+Async.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,11 +440,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4PVHH82237;
 				INFOPLIST_FILE = AsyncImageViewSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.basil.AsyncImageViewSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AsyncImageViewSample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -430,11 +456,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4PVHH82237;
 				INFOPLIST_FILE = AsyncImageViewSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.basil.AsyncImageViewSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AsyncImageViewSample-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
